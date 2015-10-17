@@ -1,0 +1,6 @@
+<p><%= @list_of_item.message %></p>
+<ul>
+  <% @list_of_item.each do |item| %>
+    <li><%= item.name %></li>
+  <% end %>
+</ul>
