@@ -4,7 +4,7 @@ class Item < ActiveRecord::Base
   def self.create_with_category(attrs)
     create(
       name: attrs.fetch(:name),
-      category_id: Category.find_or_create_by(name: attrs.fetch(:category)).id
+      category_id: Category.find_or_create_by(name: attrs.fetch(:category, "")).id
     )
   end
 

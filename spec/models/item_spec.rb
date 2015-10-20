@@ -12,6 +12,16 @@ describe Item do
         }.to change { category.items.count }.by 1
       end
     end
+
+    context "with missing category" do
+      it "creates an item without category" do
+        attrs = {name: "Item 1"}
+
+        expect {
+          Item.create_with_category(attrs)
+        }.to change(Item, :count).by 1
+      end
+    end
   end
 
   describe ".all_grouped_by_category" do
