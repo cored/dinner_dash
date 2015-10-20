@@ -5,7 +5,7 @@ module Items
     end
 
     def call(item_attrs)
-      item_repository.create(item_attrs)
+      item_repository.create_with_category(item_attrs)
     end
 
     private

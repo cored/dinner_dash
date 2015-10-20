@@ -5,7 +5,7 @@ Given(/^the following items exist:$/) do |item_info|
   item_info.hashes.each do |item_attrs|
     Items::AddNew.new(
       item_repository: Item
-    ).call(item_attrs)
+    ).call(item_attrs.symbolize_keys)
   end
 end
 
